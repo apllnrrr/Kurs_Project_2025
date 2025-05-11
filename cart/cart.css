@@ -1,0 +1,306 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root {
+    /* Цвета */
+    --color-primary: rgba(226, 51, 51, 1);
+    --color-white: rgba(255, 255, 255, 1);
+    --color-black: rgba(20, 20, 22, 1);
+    --color-gray-light: rgba(241, 241, 241, 1);
+    --color-gray-text: rgba(103, 103, 103, 1);
+    --color-gray-dark: rgba(148, 163, 184, 1);
+    --color-footer-bg: rgba(20, 20, 22, 1);
+    --color-footer-text: rgba(185, 185, 185, 1);
+    
+    /* Размеры */
+    --header-height: 3.5625rem;
+    --header-padding-x: 5.9375rem;
+    --welcome-padding-x: 5.9375rem;
+    --features-padding-x: 6rem;
+    --footer-padding-x: 6.25rem;
+    
+    /* Шрифты */
+    --font-size-base: 1rem;
+    --font-size-small: 0.875rem;
+    --font-size-medium: 1.125rem;
+    --font-size-large: 1.5rem;
+    --font-size-xlarge: 2.8125rem;
+    --font-size-xxlarge: 4.6875rem;
+    
+    /* Отступы */
+    --padding-small: 0.875rem;
+    --padding-medium: 1.125rem;
+    --padding-large: 1.5rem;
+    --padding-xlarge: 3.125rem;
+    --padding-xxlarge: 6.25rem;
+    
+    /* Размеры элементов */
+    --logo-font-size: 1.875rem;
+    --logo-img-width: 2.1875rem;
+    --logo-img-height: 2.4375rem;
+    --cart-button-width: 8.875rem;
+    --cart-button-height: 3.5625rem;
+    --slider-item-width: 17.5625rem;
+    --slider-item-height: 25.125rem;
+    --controls-width: 10.375rem;
+    --controls-height: 4.3125rem;
+  }
+
+html {
+    font-size: var(--font-size-base);
+    padding: 0;
+}
+body {
+    margin: 0;
+    padding-top: var(--padding-xlarge);
+}
+header {
+    padding: 0 var(--header-padding-x);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: var(--header-height);
+    margin-bottom: var(--padding-xxlarge);
+    width: 100%;
+    box-sizing: border-box;
+}
+header .logo {
+    display: flex;
+    align-items: center;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-style: normal;
+}
+header .logo p{
+    margin: 0;
+    font-size: var(--logo-font-size);
+    padding: 0;
+    line-height: 1.3;
+}
+header .logo img {
+    width: var(--logo-img-width);
+    height: var(--logo-img-height);
+    margin-right: 0.5rem;
+}
+header .links {
+    display: flex;
+    height: 27px;
+    align-items: center;
+}
+header .links a {
+    width: fit-content;
+    font-family: 'Inter', sans-serif;
+    margin-right: 3.75rem;
+    font-weight: 400;
+    color: rgba(96, 96, 96, 1);
+    font-size: var(--font-size-medium);
+    line-height: 0.27;
+}
+header .buttons {
+    display: flex;
+    align-items: center;
+}
+header .burger-menu {
+    display: none;
+}
+header .line {
+    width: 30px; 
+    height: 4px; 
+    background-color: black;
+    margin: 4px 0; 
+    transition: all 0.3s; 
+}
+#color-button {
+   display: flex;
+   background-color: transparent; 
+   width: 2.1875rem;
+   height: 2.1875rem;
+   margin-right: 0.6875rem;
+   border-radius: 50%;
+   border: 1px solid rgba(226, 51, 51, 1);
+   justify-content: center;
+   align-items: center;
+}
+h1 {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    font-size: 50px;
+    text-align: center;
+}
+section {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+section button {
+    background-color: var(--color-primary);
+    border: none;
+    border-radius: 15px;
+    color: var(--color-white);
+    font-family: 'Poppins', sans-serif;
+    font-size: 25px;
+    padding: 20px;
+}
+footer {
+    background-color: rgba(20, 20, 22, 1);
+    padding: 100px 100px 100px 100px;
+}
+.footer-content {
+    display: flex;
+    flex-direction: column;
+}
+.footer-content-1 {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    height: fit-content;
+    align-items: center;
+    padding-bottom: 1.25rem;
+    border-bottom: 0.5px solid rgba(129, 129, 129, 1);
+}
+footer .logo {
+    display: flex;
+    align-items: center;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-style: normal;
+}
+footer .logo p{
+    margin: 0;
+    font-size: 30px;
+    padding: 0;
+    line-height: 1.3;
+    color: rgba(255, 255, 255, 1);
+}
+footer .logo img {
+    width: 35px;
+    height: 39px;
+    margin-right: 8px;
+}
+footer .links {
+    width: 207px;
+    display: flex;
+    justify-content: space-between;
+}
+footer a {
+    color: rgba(185, 185, 185, 1);
+    font-family: 'Inter', sans-serif;
+    font-size: 18px;
+}
+footer .contacts {
+    box-sizing: border-box;
+    margin-top: 1.3125rem;
+    height: 65px;
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    color: rgba(185, 185, 185, 1);
+    flex-direction: column;
+    font-family: 'Inter', sans-serif;
+    font-size: 18px;
+    line-height: 28px;
+}
+footer .contacts p {
+    margin: 0;
+    display: flex;
+    align-items: center;
+}
+footer .contacts p:nth-child(1)::before{
+    content: '';
+    background-image: url("pictures/location-icon.svg");
+    width: 12px;
+    height: 17px;
+    margin-right: 5px;
+}
+footer .contacts p:nth-child(2)::before{
+    content: '';
+    background-image: url("pictures/phone-icon.svg");
+    background-repeat: no-repeat;
+    width: 15px;
+    height: 15px;
+    margin-right: 6px;
+}
+@media (max-width: 768px) and (min-width: 381px) {
+    body {
+        padding-top: 50px;
+        width: 768px;
+    }
+    header {
+        padding: 0px 35px;
+        height: 40px;
+        margin-bottom: 50px;
+    }
+    header .links{
+        display: none;
+    }
+    header .buttons #cart-button {
+        display: none;
+    }
+    header button .burger-menu {
+        display: flex;
+        flex-direction: column;
+        cursor: pointer;
+    }
+    #color-button {
+       margin-right: 50px;
+    }
+    footer {
+        padding: 50px;
+    }
+}
+@media (max-width: 380px){
+    body {
+        width: 380px;
+        padding-top: 35px;
+    }
+    header {
+        margin-bottom: 35px;
+        padding-left: 20px;
+        padding-right: 20px;
+        height: 40px;
+    }
+    header .links {
+        display: none;
+    }
+    header .burger-menu {
+        display: none;
+    }
+    header .line {
+        width: 30px; 
+        height: 4px; 
+        background-color: black;
+        margin: 4px 0; 
+        transition: all 0.3s; 
+    }
+    #color-button {
+       margin-right: 20px;
+    }
+    #cart-button {
+        display: none;
+    }
+
+    footer {
+        padding: 35px 20px;
+    }
+    .footer-content-1 {
+        height: 180px;
+        flex-direction: column;
+        height: fit-content;
+        align-items: start;
+        padding-bottom: 20px;
+        box-sizing: border-box;
+    }
+    footer .links {
+        height: 70px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        margin-top: 35px;
+    }
+    footer a {
+        font-size: 17.83px;
+        line-height: 26.7px;    }
+    footer .contacts {
+        margin-top: 21px;
+    }
+}
