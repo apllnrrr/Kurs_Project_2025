@@ -10,7 +10,7 @@
 <body>
     <header>
         <div class = "logo">
-            <img src = "./pictures/logo.svg">
+            <img src = "../pictures/logo.svg">
             <p>ONLY4YOU</p>
         </div>
         <div class = "links">
@@ -20,23 +20,24 @@
         </div>
         <div class = "buttons">
             <button id = "color-button">
-                <img src = "./pictures/Moon.svg">
+                <img src = "../pictures/Moon.svg">
             </button>
-            <button class = "burger-menu">
-
+            <button class = "burger-menu" id = "burger-menu">
+                <img src = "../pictures/menu.svg" alt = "menu">
             </button>
         </div>
     </header>
     <section>
         <h1>КОРЗИНА</h1>
-        <div class = 'cart-items'>
-            <div class = 'item'>
-                <img>
-                <p></p>
-                <p></p>
+        <div class="cart-items" id="cart-container">
+            <div class="empty-cart-message" style="display: none;">
+                <p>Ваша корзина пуста</p>
             </div>
         </div>
-        <button>Оформить заказ</button>
+        <div class="cart-summary">
+            <p>Итого: <span id="total-price">0</span> руб.</p>
+            <button id="checkout-btn">Оформить заказ</button>
+        </div>
     </section>
     <footer>
         <div class = "footer-content">
@@ -56,6 +57,18 @@
         </div>
     </div>
     </footer>
+    <div class = "full-menu" id = "open-burger-menu">
+        <div class = "menu-nav">
+            <button id = "close-menu-button">
+                <img src = "../pictures/backArrow.svg" alt = "close">
+            </button>
+        </div>
+        <div class = "links">
+            <a href = "#features">О НАС</a>
+            <a href = "#footer">КОНТАКТЫ</a>
+            <a href = "#popular-section">ПОПУЛЯРНОЕ</a>
+        </div>
+    </div>
 </body>
 <script src = 'cart.js'></script>
 </html>
