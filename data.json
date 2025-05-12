@@ -2,7 +2,7 @@
     "items" : [
         {
             "id":1,
-            "image": "./pictures/dataPics/present1.png",
+            "image": "pictures/dataPics/present1.png",
             "price": "50", 
             "forWhom": "men",
             "name": "Подарок для мужчин", 
@@ -10,7 +10,7 @@
         },
         {
             "id":2,
-            "image": "./pictures/dataPics/present1.png",
+            "image": "../pictures/dataPics/present1.png",
             "price": "60", 
             "forWhom": "men",
             "name": "Подарок для мужчин",
@@ -18,7 +18,7 @@
         },
         {
             "id":3,
-            "image": "./pictures/dataPics/present1.png",
+            "image": "/pictures/dataPics/present1.png",
             "price": "80", 
             "forWhom": "men",
             "name": "Подарок для мужчин",
