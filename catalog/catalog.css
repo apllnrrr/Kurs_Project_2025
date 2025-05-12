@@ -259,7 +259,7 @@ h1 {
     transition: transform var(--transition-medium);
 }
 .item:hover {
-    transform: translateY(-5px);
+    transform: translateY(-10px);
 }
 .item img {
     width: 15.75rem;
