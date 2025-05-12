@@ -99,7 +99,7 @@ function makeContent (itemsData) {
         card.dataset.id = item.id;
 
         card.innerHTML = `
-            <img src="./${item.image}" alt="${item.name}">
+            <img src="../${item.image}" alt="${item.name}">
             <h3>${item.name}</h3>
             <div class="card-info">
                 <div class="price-info">
