@@ -27,67 +27,67 @@ document.addEventListener('DOMContentLoaded', async function() {
     const filtrMenBtn = document.getElementById('filtr-men')
     const filtrChildBtn = document.getElementById('filtr-child')
 
-   makeContent(itemsData.items)
+    makeContent(itemsData.items)
 
-   filtrWomenBtn.addEventListener( 'click', ()=>{
-    filtration('women',itemsData)
-    filtrWomenBtn.classList.add('active')
-    filtrMenBtn.classList.remove('active')
-    filtrChildBtn.classList.remove('active')
-   })
-   filtrMenBtn.addEventListener( 'click', ()=>{
-    filtration('men',itemsData)
-    filtrMenBtn.classList.add('active')
-    filtrWomenBtn.classList.remove('active')
-    filtrChildBtn.classList.remove('active')
-   })
-   filtrChildBtn.addEventListener( 'click', ()=>{
-    filtration('children', itemsData)
-    filtrChildBtn.classList.add('active')
-    filtrWomenBtn.classList.remove('active')
-    filtrMenBtn.classList.remove('active')
-   })
-   const cartBtn = document.getElementById('cart-button')
-   cartBtn.addEventListener('click', ()=>{
-       window.location.href = '../cart/cart.html'
-   })
+    filtrWomenBtn.addEventListener('click', ()=>{
+        filtration('women',itemsData)
+        filtrWomenBtn.classList.add('active')
+        filtrMenBtn.classList.remove('active')
+        filtrChildBtn.classList.remove('active')
+    })
+    
+    filtrMenBtn.addEventListener('click', ()=>{
+        filtration('men',itemsData)
+        filtrMenBtn.classList.add('active')
+        filtrWomenBtn.classList.remove('active')
+        filtrChildBtn.classList.remove('active')
+    })
+    
+    filtrChildBtn.addEventListener('click', ()=>{
+        filtration('children', itemsData)
+        filtrChildBtn.classList.add('active')
+        filtrWomenBtn.classList.remove('active')
+        filtrMenBtn.classList.remove('active')
+    })
+    
+    const cartBtn = document.getElementById('cart-button')
+    cartBtn.addEventListener('click', ()=>{
+        window.location.href = '../cart/cart.html'
+    })
 
 
-   const burgerBtn = document.getElementById('burger-menu')
-   const menu = document.getElementById('open-burger-menu')
+    const burgerBtn = document.getElementById('burger-menu')
+    const menu = document.getElementById('open-burger-menu')
 
-   burgerBtn.addEventListener('click', ()=>{
-       menu.classList.add('active')
-       burgerBtn.classList.add('not-active')
-       
-       const closeMenuBtn = document.getElementById('close-menu-button')
-       const links = document.querySelectorAll('.full-menu a')
-       closeMenuBtn.addEventListener('click', ()=>{
-           menu.classList.remove('active')
-           burgerBtn.classList.remove('not-active')
-       })
-       links.forEach(link =>{
-           link.addEventListener('click', function(e) {
-               if (this.getAttribute('href').startsWith('#')) {
-                   e.preventDefault();
-                   const targetId = this.getAttribute('href');
-                   const targetElement = document.querySelector(targetId);
-                   
-                   if (targetElement) {
-                       
-                       targetElement.scrollIntoView({ behavior: 'smooth' });
-                   }
-               }    
-               menu.classList.remove('active')
-               burgerBtn.classList.remove('not-active')
-           })
-       })
-
-   })
-   
+    burgerBtn.addEventListener('click', ()=>{
+        menu.classList.add('active')
+        burgerBtn.classList.add('not-active')
+        
+        const closeMenuBtn = document.getElementById('close-menu-button')
+        const links = document.querySelectorAll('.full-menu a')
+        closeMenuBtn.addEventListener('click', ()=>{
+            menu.classList.remove('active')
+            burgerBtn.classList.remove('not-active')
+        })
+        links.forEach(link =>{
+            link.addEventListener('click', function(e) {
+                if (this.getAttribute('href').startsWith('#')) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+                    
+                    if (targetElement) {
+                        targetElement.scrollIntoView({ behavior: 'smooth' });
+                    }
+                }    
+                menu.classList.remove('active')
+                burgerBtn.classList.remove('not-active')
+            })
+        })
+    })
 })
 
-function makeContent (itemsData) {
+function makeContent(itemsData) {
     const container = document.getElementById('cards-container')
 
     container.innerHTML = ''
@@ -106,18 +106,41 @@ function makeContent (itemsData) {
                     <p>Стоимость</p>
                     <p>${item.price}</p>
                 </div>
-                <button class="add-to-cart">В КОРЗИНУ</button>
+                <button class="add-to-cart-button">В КОРЗИНУ</button>
             </div>
         `
         container.appendChild(card);
-        card.addEventListener('click', function() {
-            const itemId = this.dataset.id;
-            localStorage.setItem('selectedItemId', itemId);
-            window.location.href = '../item/item.html';
+        
+        card.addEventListener('click', function(e) {
+            // Проверяем, был ли клик по кнопке "В КОРЗИНУ"
+            if (!e.target.classList.contains('add-to-cart-button')) {
+                const itemId = this.dataset.id;
+                localStorage.setItem('selectedItemId', itemId);
+                window.location.href = '../item/item.html';
+            }
+        });
+        
+        card.querySelector('.add-to-cart-button').addEventListener('click', function(e) {
+            e.stopPropagation(); // Предотвращаем срабатывание обработчика карточки
+            
+            const itemId = card.dataset.id;
+            
+            // Получаем текущую корзину из LocalStorage или создаем новую
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+            
+            // Проверяем, есть ли уже такой товар в корзине
+            if (!cart.includes(itemId)) {
+                cart.push(itemId);
+                localStorage.setItem('cart', JSON.stringify(cart));
+                alert('Товар добавлен в корзину!');
+            } else {
+                alert('Этот товар уже в корзине!');
+            }
         });
     });
 }
-function filtration(type,itemsData) {
+
+function filtration(type, itemsData) {
     const filteredItems = itemsData.items.filter(item => item.forWhom === type);
     makeContent(filteredItems);
 }

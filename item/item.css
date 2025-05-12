@@ -141,9 +141,10 @@ html {
     padding: 0;
 }
 body {
-    margin: 0;
+    margin: 0 auto;
     padding-top: var(--padding-xlarge);
     background-color: var(--bg-color);
+    max-width: 1440px;
 }
 a {
     text-decoration: none;

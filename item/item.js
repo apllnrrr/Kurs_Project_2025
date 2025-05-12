@@ -22,6 +22,7 @@ document.addEventListener('DOMContentLoaded', async function() {
         
         const item = data.items.find(product => product.id == itemId); 
         fillData(item)
+        setupAddToCartButton(item);
     } catch (error) {
         console.error('Ошибка загрузки данных:', error);
     }
@@ -40,7 +41,7 @@ function fillData(item) {
 
 
 
-    img.src = item.image
+    img.src = "../" + item.image
     name.textContent = item.name
     description.textContent = item.description
     price.textContent = item.price
@@ -63,4 +64,49 @@ function fillTypeInf(type) {
         typeImg.src = '../pictures/dataPics/forChildrenPic.png'
         typeText.textContent = 'Детей'
     }
+}
+
+function setupAddToCartButton(item) {
+    const addToCartBtn = document.querySelector('.add-to-cart-button');
+    
+    addToCartBtn.addEventListener('click', function() {
+        // Получаем текущую корзину или создаем новую
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+        
+        // Проверяем, есть ли уже такой товар в корзине
+        if (!cart.includes(item.id)) {
+            cart.push(item.id);
+            localStorage.setItem('cart', JSON.stringify(cart));
+            
+            // Визуальный фидбек
+            this.innerHTML = `
+                Добавлено
+            `;
+            this.style.backgroundColor = 'rgb(229, 186, 186);';
+            
+            // Возвращаем исходный вид через 2 секунды
+            setTimeout(() => {
+                this.innerHTML = `
+                    <img src='../pictures/wallet.svg' alt='wallet'>
+                    В корзину
+                `;
+                this.style.backgroundColor = '';
+            }, 2000);
+        } else {
+            // Если товар уже в корзине
+            this.innerHTML = `
+                <img src='../pictures/warning.svg' alt='warning'>
+                Уже в корзине
+            `;
+            this.style.backgroundColor = 'rgb(229, 186, 186);';
+            
+            setTimeout(() => {
+                this.innerHTML = `
+                    <img src='../pictures/wallet.svg' alt='wallet'>
+                    В корзину
+                `;
+                this.style.backgroundColor = '';
+            }, 2000);
+        }
+    });
 }

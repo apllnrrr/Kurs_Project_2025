@@ -156,6 +156,28 @@ document.addEventListener('DOMContentLoaded', async function() {
                 title.textContent = item.name;
                 const price = slide.querySelector('.price-info p:last-child');
                 price.textContent = item.price;
+
+                slide.addEventListener('click', function(e) {
+                    if (!e.target.classList.contains('add-to-cart-button')) {
+                        localStorage.setItem('selectedItemId', item.id);
+                        window.location.href = '../item/item.html';
+                    }
+                });
+                const addToCartBtn = slide.querySelector('.add-to-cart-button');
+                addToCartBtn.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    
+                    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+                    
+                    if (!cart.includes(item.id)) {
+                        cart.push(item.id);
+                        localStorage.setItem('cart', JSON.stringify(cart));
+
+                        alert('Товар добавлен в корзину!');
+                    } else {
+                        alert('Этот товар уже в корзине!');
+                    }
+                });
             }
         }
     }
