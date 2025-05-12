@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', async function() {
     const catalogButton = document.getElementById('catalog-button') 
     if (catalogButton) {
         catalogButton.addEventListener('click', function() {
-            window.location.href = '/catalog/catalog.html'; // Укажите нужный URL
+            window.location.href = './catalog/catalog.html'; 
         });
     }
 
