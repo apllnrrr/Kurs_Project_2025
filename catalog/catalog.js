@@ -1,4 +1,20 @@
 document.addEventListener('DOMContentLoaded', async function() {
+    
+    const themeToggle = document.getElementById('color-button');
+    const html = document.documentElement;
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme) {
+        html.setAttribute('data-theme', savedTheme);
+    }
+
+    themeToggle.addEventListener('click', function() {
+        const currentTheme = html.getAttribute('data-theme');
+        const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+        
+        html.setAttribute('data-theme', newTheme);
+        localStorage.setItem('theme', newTheme);
+    });
+
     let itemsData;
     try {
         const response = await fetch('../data.json');
@@ -35,6 +51,40 @@ document.addEventListener('DOMContentLoaded', async function() {
    cartBtn.addEventListener('click', ()=>{
        window.location.href = '../cart/cart.html'
    })
+
+
+   const burgerBtn = document.getElementById('burger-menu')
+   const menu = document.getElementById('open-burger-menu')
+
+   burgerBtn.addEventListener('click', ()=>{
+       menu.classList.add('active')
+       burgerBtn.classList.add('not-active')
+       
+       const closeMenuBtn = document.getElementById('close-menu-button')
+       const links = document.querySelectorAll('.full-menu a')
+       closeMenuBtn.addEventListener('click', ()=>{
+           menu.classList.remove('active')
+           burgerBtn.classList.remove('not-active')
+       })
+       links.forEach(link =>{
+           link.addEventListener('click', function(e) {
+               if (this.getAttribute('href').startsWith('#')) {
+                   e.preventDefault();
+                   const targetId = this.getAttribute('href');
+                   const targetElement = document.querySelector(targetId);
+                   
+                   if (targetElement) {
+                       // Плавная прокрутка к якорю
+                       targetElement.scrollIntoView({ behavior: 'smooth' });
+                   }
+               }    
+               menu.classList.remove('active')
+               burgerBtn.classList.remove('not-active')
+           })
+       })
+
+   })
+   
 })
 
 function makeContent (itemsData) {

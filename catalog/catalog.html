@@ -14,22 +14,21 @@
             <p>ONLY4YOU</p>
         </div>
         <div class = "links">
-            <a>О НАС</a>
-            <a>КОНТАКТЫ</a>
-            <a>ПОПУЛЯРНОЕ</a>
+            <a href = "../index.html#features">О НАС</a>
+            <a href = "#footer">КОНТАКТЫ</a>
+            <a href = "../index.html#popular-section">ПОПУЛЯРНОЕ</a>
         </div>
         <div class = "buttons">
             <button id = "color-button">
                 <img src = "../pictures/Moon.svg">
             </button>
-            <button id = "cart-button" href = '../cart/cart.html'>
-                <p>КОРЗИНА</p>
-                <img src = "../pictures/cart.svg">
+            <button id = "cart-button">
+                КОРЗИНА
+                <img src = "../pictures/cart.svg" alt = "cart">
             </button>
-            <button class = "burger-menu">
-                <div class="line"></div>
-                <div class="line"></div>
-                <div class="line"></div>
+            </button>
+            <button class = "burger-menu" id = "burger-menu">
+                <img src = "../pictures/menu.svg" alt = "menu">
             </button>
         </div>
     </header>
@@ -44,7 +43,7 @@
 
         </div>
     </section>
-    <footer>
+    <footer id = "footer">
         <div class = "footer-content">
             <div class = "footer-content-1">
                 <div class = "logo">
@@ -52,16 +51,32 @@
                     <p>ONLY4YOU</p>
                 </div>
                 <div class = "links">
-                    <a>О Нас</a>
+                    <a href = "../index.html#features">О Нас</a>
                     <a>Контакты</a>
                 </div>
             </div>
-        <div class = "contacts">
-            <p>Петруся Бровки 4</p>
-            <p>+375 (29) 337-14-16</p>
-        </div>
+            <div class = "contacts">
+                <a href="https://www.google.com/maps/place/%D1%83%D0%BB.+%D0%9F%D0%B5%D1%82%D1%80%D1%83%D1%81%D1%8F+%D0%91%D1%80%D0%BE%D0%B2%D0%BA%D0%B8+4,+%D0%9C%D0%B8%D0%BD%D1%81%D0%BA,+%D0%9C%D0%B8%D0%BD%D1%81%D0%BA%D0%B0%D1%8F+%D0%BE%D0%B1%D0%BB%D0%B0%D1%81%D1%82%D1%8C+220089/@53.9188117,27.5937053,17z/data=!3m1!4b1!4m6!3m5!1s0x46dbcfa7bec46317:0x3c904d89b178ff23!8m2!3d53.9188117!4d27.5937053!16s%2Fg%2F11rgdll10k?entry=ttu&g_ep=EgoyMDI1MDUwNy4wIKXMDSoJLDEwMjExNDUzSAFQAw%3D%3D" target="_blank">
+                    <p>Петруся Бровки 4</p>
+                </a>
+                <a href="tel:+375293371416">
+                    <p>+375 (29) 337-14-16</p>
+                </a>
+            </div>
     </div>
     </footer>
+    <div class = "full-menu" id = "open-burger-menu">
+        <div class = "menu-nav">
+            <button id = "close-menu-button">
+                <img src = "../pictures/backArrow.svg" alt = "close">
+            </button>
+        </div>
+        <div class = "links">
+            <a href = "../index.html#features">О НАС</a>
+            <a href = "#footer">КОНТАКТЫ</a>
+            <a href = "../index.html#popular-section">ПОПУЛЯРНОЕ</a>
+        </div>
+    </div>
 </body>
 <script src = 'catalog.js'></script>
 </html>
