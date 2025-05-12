@@ -10,7 +10,7 @@
         },
         {
             "id":2,
-            "image": "../pictures/dataPics/present1.png",
+            "image": "pictures/dataPics/present1.png",
             "price": "60", 
             "forWhom": "men",
             "name": "Подарок для мужчин",
@@ -18,7 +18,7 @@
         },
         {
             "id":3,
-            "image": "/pictures/dataPics/present1.png",
+            "image": "pictures/dataPics/present1.png",
             "price": "80", 
             "forWhom": "men",
             "name": "Подарок для мужчин",
@@ -26,7 +26,7 @@
         },
         {
             "id":4,
-            "image": "./pictures/dataPics/present2.png",
+            "image": "pictures/dataPics/present2.png",
             "price": "80", 
             "forWhom": "women",
             "name": "Подарок для женщин",
@@ -34,7 +34,7 @@
         },
         {
             "id":5,
-            "image": "./pictures/dataPics/present2.png",
+            "image": "pictures/dataPics/present2.png",
             "price": "40", 
             "forWhom": "women",
             "name": "Подарок для женщин",
@@ -42,7 +42,7 @@
         },
         {
             "id":6,
-            "image": "./pictures/dataPics/present2.png",
+            "image": "pictures/dataPics/present2.png",
             "price": "40", 
             "forWhom": "women",
             "name": "Подарок для женщин",
@@ -50,7 +50,7 @@
         },
         {
             "id":7,
-            "image": "./pictures/dataPics/present3.png",
+            "image": "pictures/dataPics/present3.png",
             "price": "30", 
             "forWhom": "children",
             "name": "Подарок для детей",
@@ -58,7 +58,7 @@
         },
         {
             "id":8,
-            "image": "./pictures/dataPics/present3.png",
+            "image": "pictures/dataPics/present3.png",
             "price": "40", 
             "forWhom": "children",
             "name": "Подарок для детей",
@@ -66,7 +66,7 @@
         },
         {
             "id":9,
-            "image": "./pictures/dataPics/present3.png",
+            "image": "pictures/dataPics/present3.png",
             "price": "30", 
             "forWhom": "children",
             "name": "Подарок для детей",
