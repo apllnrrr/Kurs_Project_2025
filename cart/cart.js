@@ -14,7 +14,35 @@ document.addEventListener('DOMContentLoaded', async function() {
         html.setAttribute('data-theme', newTheme);
         localStorage.setItem('theme', newTheme);
     });
+        const burgerBtn = document.getElementById('burger-menu')
+    const menu = document.getElementById('open-burger-menu')
 
+    burgerBtn.addEventListener('click', ()=>{
+        menu.classList.add('active')
+        burgerBtn.classList.add('not-active')
+        
+        const closeMenuBtn = document.getElementById('close-menu-button')
+        const links = document.querySelectorAll('.full-menu a')
+        closeMenuBtn.addEventListener('click', ()=>{
+            menu.classList.remove('active')
+            burgerBtn.classList.remove('not-active')
+        })
+        links.forEach(link =>{
+            link.addEventListener('click', function(e) {
+                if (this.getAttribute('href').startsWith('#')) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+                    
+                    if (targetElement) {
+                        targetElement.scrollIntoView({ behavior: 'smooth' });
+                    }
+                }    
+                menu.classList.remove('active')
+                burgerBtn.classList.remove('not-active')
+            })
+        })
+    })
 
     let itemsData = [];
     try {
