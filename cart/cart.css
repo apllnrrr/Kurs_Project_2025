@@ -3,6 +3,7 @@
 
 :root {
     /* Цвета */
+    --bg-color:  rgba(217, 217, 217, 0);
     --color-primary: rgba(226, 51, 51, 1);
     --color-white: rgba(255, 255, 255, 1);
     --color-black: rgba(20, 20, 22, 1);
@@ -74,6 +75,7 @@ body {
     margin: 0 auto;
     padding-top: var(--padding-xlarge);
     max-width: 1440px;
+    background-color: var(--bg-color);
 }
 header {
     padding: 0 var(--header-padding-x);
@@ -128,13 +130,6 @@ header .buttons {
 header .burger-menu {
     display: none;
 }
-header .line {
-    width: 30px; 
-    height: 4px; 
-    background-color: black;
-    margin: 4px 0; 
-    transition: all 0.3s; 
-}
 #color-button {
    display: flex;
    background-color: transparent; 
@@ -145,6 +140,10 @@ header .line {
    border: 1px solid rgba(226, 51, 51, 1);
    justify-content: center;
    align-items: center;
+}
+#color-button:hover {
+    width: 2.3rem;
+    height: 2.3rem;
 }
 h1 {
     font-family: 'Poppins', sans-serif;
