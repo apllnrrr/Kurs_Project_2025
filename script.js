@@ -33,11 +33,6 @@ document.addEventListener('DOMContentLoaded', async function() {
         });
     }
 
-    const cartBtn = document.getElementById('cart-button')
-    cartBtn.addEventListener('click', ()=>{
-        window.location.href = '../cart/cart.html'
-    })
-
     const burgerBtn = document.getElementById('burger-menu')
     const menu = document.getElementById('open-burger-menu')
 
@@ -69,7 +64,10 @@ document.addEventListener('DOMContentLoaded', async function() {
         })
 
     })
-    
+    const cartBtn = document.getElementById('cart-button')
+    cartBtn.addEventListener('click', ()=>{
+        window.location.href = 'cart/cart.html'
+    })
 
     function makeSlider(data) {
         const slider = document.querySelector('.slider');
@@ -160,7 +158,7 @@ document.addEventListener('DOMContentLoaded', async function() {
                 slide.addEventListener('click', function(e) {
                     if (!e.target.classList.contains('add-to-cart-button')) {
                         localStorage.setItem('selectedItemId', item.id);
-                        window.location.href = '../item/item.html';
+                        window.location.href = 'item/item.html';
                     }
                 });
                 const addToCartBtn = slide.querySelector('.add-to-cart-button');
