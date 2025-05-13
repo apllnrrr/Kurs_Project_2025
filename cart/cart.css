@@ -45,7 +45,20 @@
     --controls-width: 10.375rem;
     --controls-height: 4.3125rem;
   }
-
+  [data-theme="dark"] {
+    --bg-color: rgb(217, 217, 222);
+    --page-bg-color: rgb(198, 198, 204);
+    --color-primary: rgb(178, 154, 154);
+    --color-white: rgb(0, 0, 0);
+    --color-black: rgb(255, 255, 255);
+    --color-gray-light: rgb(180, 179, 179);
+    --color-gray-text: rgb(0, 0, 0);
+    --color-gray-dark: rgb(228, 230, 233);
+    --color-footer-bg: rgba(20, 20, 22, 1);
+    --color-footer-text: rgb(96, 95, 95);
+    --color-gray-header: rgb(255, 254, 254);
+    --popular-gray-text: rgb(255, 250, 250);
+} 
 html {
     font-size: var(--font-size-base);
     padding: 0;

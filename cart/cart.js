@@ -1,5 +1,21 @@
 document.addEventListener('DOMContentLoaded', async function() {
-    // Загрузка данных о товарах
+        
+    const themeToggle = document.getElementById('color-button');
+    const html = document.documentElement;
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme) {
+        html.setAttribute('data-theme', savedTheme);
+    }
+
+    themeToggle.addEventListener('click', function() {
+        const currentTheme = html.getAttribute('data-theme');
+        const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+        
+        html.setAttribute('data-theme', newTheme);
+        localStorage.setItem('theme', newTheme);
+    });
+
+
     let itemsData = [];
     try {
         const response = await fetch('../data.json');

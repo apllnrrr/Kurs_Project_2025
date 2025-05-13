@@ -13,7 +13,6 @@
     --color-footer-text: rgba(185, 185, 185, 1);
     --color-gray-header:  rgba(96, 96, 96, 1);
     --popular-gray-text:  rgba(197, 197, 197, 1);
-    
     /* Размеры */
     --header-height: 3.5625rem;
     --header-padding-x: 5.9375rem;
@@ -309,6 +308,7 @@ h1 {
     border-radius: 1.4375rem;
     background-color: rgba(255, 255, 255, 1); 
     box-sizing: border-box;
+    transition: 0.7 ease;
 }
 .slider-item:hover {
     transform: translateY(-10px);
