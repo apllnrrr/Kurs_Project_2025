@@ -66,7 +66,7 @@ html {
 }
 a {
     text-decoration: none;
-    transition: color var(--transition-fast);
+    transition: 0.7 ease !important;
 }
 a:hover {
     color: var(--color-primary);
